@@ -70,6 +70,14 @@ export const useDrawing = (canvasRef: React.RefObject<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return '';
 
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return '';
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const hasDrawing = imageData.data.some(pixel => pixel > 0);
+    
+    if (!hasDrawing) return '';
+
     return canvas.toDataURL('image/png');
   }, [canvasRef]);
 

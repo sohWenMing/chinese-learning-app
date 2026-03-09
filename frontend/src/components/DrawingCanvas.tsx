@@ -13,6 +13,8 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ onDrawingComplete 
     const data = getDrawingData();
     if (data) {
       onDrawingComplete(data);
+    } else {
+      alert('Please draw a character first!');
     }
   };
 
