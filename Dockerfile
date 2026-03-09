@@ -6,9 +6,9 @@ COPY frontend/ ./
 RUN npm run build
 
 FROM golang:1.21-alpine AS backend-build
-WORKDIR /app
-RUN apk add --no-cache git
-COPY backend/go.mod backend/go.sum ./
+WORKDIR /app/backend
+COPY backend/go.mod ./
+COPY backend/go.sum ./
 RUN go mod download
 COPY backend/ ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o /app/server
