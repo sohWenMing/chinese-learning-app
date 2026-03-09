@@ -1,9 +1,9 @@
 package main
 
 import (
-	"chinese-learning-app/backend/database"
-	"chinese-learning-app/backend/handlers"
-	"chinese-learning-app/backend/services"
+	"chinese-learning-app/database"
+	"chinese-learning-app/handlers"
+	"chinese-learning-app/services"
 	"log"
 	"os"
 

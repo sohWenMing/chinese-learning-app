@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { api } from '../api/client';
 
 export const Dashboard: React.FC = () => {
@@ -9,7 +8,7 @@ export const Dashboard: React.FC = () => {
     streak: 0,
     xp: 0,
   });
-  const [badges, setBadges] = useState<string[]>([]);
+  const [badges] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchProgress = async () => {
@@ -30,15 +29,11 @@ export const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      style={{
-        maxWidth: '600px',
-        margin: '0 auto',
-        padding: '20px'
-      }}
-    >
+    <div style={{
+      maxWidth: '600px',
+      margin: '0 auto',
+      padding: '20px'
+    }}>
       <h2 style={{ 
         color: 'white', 
         textAlign: 'center', 
@@ -86,7 +81,7 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

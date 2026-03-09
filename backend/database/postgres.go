@@ -1,7 +1,7 @@
 package database
 
 import (
-	"chinese-learning-app/backend/models"
+	"chinese-learning-app/models"
 	"fmt"
 	"log"
 	"os"

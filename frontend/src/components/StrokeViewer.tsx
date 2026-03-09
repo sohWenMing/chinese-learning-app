@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface StrokeViewerProps {
   svg: string;
@@ -34,8 +33,7 @@ export const StrokeViewer: React.FC<StrokeViewerProps> = ({ svg, character }) =>
         dangerouslySetInnerHTML={{ __html: svg }}
         style={{ 
           maxWidth: '200px', 
-          margin: '0 auto',
-          '& svg': { width: '100%', height: 'auto' }
+          margin: '0 auto'
         }}
       />
     </div>

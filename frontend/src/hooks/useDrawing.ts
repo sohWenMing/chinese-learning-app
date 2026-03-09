@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 interface Point {
   x: number;
@@ -7,7 +7,6 @@ interface Point {
 
 export const useDrawing = (canvasRef: React.RefObject<HTMLCanvasElement>) => {
   const [isDrawing, setIsDrawing] = useState(false);
-  const [points, setPoints] = useState<Point[]>([]);
 
   const getPoint = useCallback((e: React.PointerEvent<HTMLCanvasElement>): Point => {
     const canvas = canvasRef.current;
@@ -23,7 +22,6 @@ export const useDrawing = (canvasRef: React.RefObject<HTMLCanvasElement>) => {
   const handlePointerDown = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
     setIsDrawing(true);
     const point = getPoint(e);
-    setPoints([point]);
 
     const canvas = canvasRef.current;
     if (canvas) {
@@ -43,7 +41,6 @@ export const useDrawing = (canvasRef: React.RefObject<HTMLCanvasElement>) => {
     if (!isDrawing) return;
 
     const point = getPoint(e);
-    setPoints(prev => [...prev, point]);
 
     const canvas = canvasRef.current;
     if (canvas) {
@@ -67,7 +64,6 @@ export const useDrawing = (canvasRef: React.RefObject<HTMLCanvasElement>) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
     }
-    setPoints([]);
   }, [canvasRef]);
 
   const getDrawingData = useCallback(() => {

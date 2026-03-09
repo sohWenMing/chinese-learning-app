@@ -1,8 +1,8 @@
 package services
 
 import (
-	"chinese-learning-app/backend/database"
-	"chinese-learning-app/backend/models"
+	"chinese-learning-app/database"
+	"chinese-learning-app/models"
 	"time"
 )
 
