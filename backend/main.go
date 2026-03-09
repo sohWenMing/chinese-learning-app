@@ -21,6 +21,9 @@ func main() {
 
 	r := gin.Default()
 
+	r.Static("/assets", "./dist/assets")
+	r.StaticFile("/", "./dist/index.html")
+
 	r.Use(func(c *gin.Context) {
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
