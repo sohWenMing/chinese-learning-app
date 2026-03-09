@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+go.sum
+vendor/
+
+# Build outputs
+dist/
+build/
+*.exe
+server
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite

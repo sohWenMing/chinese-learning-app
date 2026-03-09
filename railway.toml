@@ -1,0 +1,15 @@
+# Railway config file
+# This file tells Railway how to build and deploy your app
+
+# Build command
+build = "cd backend && go build -o server && cd ../frontend && npm install && npm run build"
+
+# Start command  
+start = "./backend/server"
+
+# Environment variables
+[env]
+PORT = "8080"
+
+# PostgreSQL addon will be auto-provisioned
+# DATABASE_URL will be automatically set
